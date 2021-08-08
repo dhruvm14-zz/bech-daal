@@ -6,28 +6,22 @@ import Sidebar from "../components/Sidebar";
 import axios from "axios";
 
 export default function Profile() {
-
   const [prevTrans, setPrevTrans] = useState([]);
   const user = JSON.parse(localStorage.getItem("user"));
-
+  console.log(user.user);
   useEffect(() => {
-    axios.get(`http://localhost:5000/transactions/status/${user.user._id}`).then(res => {
-            console.log(res.data);
-            setPrevTrans(res.data);
-            console.log(prevTrans.length);
-        }).catch(err => {
-            console.log(err)
-        })
-  }, [])
+    axios
+      .get(`http://localhost:5000/transactions/status/${user._id}`)
+      .then((res) => {
+        console.log(res.data);
+        setPrevTrans(res.data);
+        console.log(prevTrans.length);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
 
-  const img = ["/img/greenBin.png", "/img/addImage.jpeg", "/img/logo.png"];
-  const list = {
-    type: "Plastic",
-    rate: "30",
-    quantity: "10 kg",
-    date: "07-08-2021",
-    time: "10:40 pm",
-  };
   const graph = {
     animationEnabled: true,
     backgroundColor: "#2a2d3e",
@@ -35,7 +29,7 @@ export default function Profile() {
     data: [
       {
         type: "doughnut",
-        dataPoints: [{ y: 10 }, { y: 90 }],
+        dataPoints: [{ y: 10982 }, { y: 1029 }],
       },
     ],
   };
@@ -48,11 +42,11 @@ export default function Profile() {
           <div className={styles.profile}>
             <h1>User Profile</h1>
             <div>
-              <img src="/img/greenBin.png" alt="" />
+              <img style={{ borderRadius: "50%" }} src="/img/user.png" alt="" />
               <div>
-                <p>{user.user.name}</p>
-                <p>{user.user.userName}</p>
-                <p>{user.user.email}</p>
+                <p>{user.name}</p>
+                <p>{user.userName}</p>
+                <p>{user.email}</p>
               </div>
             </div>
           </div>
@@ -60,10 +54,10 @@ export default function Profile() {
             <h1>Score</h1>
             <div>
               <div className={styles.scoreText}>
-                <p>Current level - 8</p>
-                <p>City Rank - 1</p>
-                <p>State Rank - 2</p>
-                <p>Country Rank - 2</p>
+                <p>Current level - 4</p>
+                <p>City Rank - 35</p>
+                <p>State Rank - 235</p>
+                <p>Country Rank - 7864</p>
               </div>
               <div className={styles.scoreGraph}>
                 <CanvasJSChart options={graph} />
@@ -71,12 +65,12 @@ export default function Profile() {
             </div>
           </div>
         </div>
-        <h1 style={{textAlign: "center"}}>Previous Transactions</h1>
-        {prevTrans && prevTrans.map((trans, key) => (
-          <Transaction trans={trans} key={key} />
-        ))}
+        <h1 style={{ textAlign: "center" }}>Previous Transactions</h1>
+        {prevTrans &&
+          prevTrans.map((trans, index) => (
+            <Transaction trans={trans} key={index} />
+          ))}
       </div>
-
     </div>
   );
 }

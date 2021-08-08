@@ -1,5 +1,5 @@
-import React, { useState , useEffect} from "react";
-import {useHistory} from "react-router-dom"
+import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { CanvasJSChart } from "canvasjs-react-charts";
 import PriceCard from "../components/PriceCard";
 import Sidebar from "../components/Sidebar";
@@ -7,16 +7,14 @@ import styles from "../styles/LandingPage.module.css";
 import AOS from "aos";
 
 export default function LandingPage() {
-  
-  const history = useHistory()
+  const history = useHistory();
 
   useEffect(() => {
-    if(!localStorage.getItem("user")){
-      console.log(localStorage.getItem("user"))
-      history.push('/login')
+    if (!localStorage.getItem("user")) {
+      console.log(localStorage.getItem("user"));
+      history.push("/login");
     }
-  }, [history])
-
+  }, [history]);
 
   AOS.init({
     duration: 1000,
@@ -26,6 +24,7 @@ export default function LandingPage() {
     animationEnabled: true,
     backgroundColor: "#2a2d3e",
     height: 150,
+    width: 270,
     data: [
       {
         type: "doughnut",
@@ -38,6 +37,7 @@ export default function LandingPage() {
     animationEnabled: true,
     backgroundColor: "#2a2d3e",
     height: 150,
+    width: 270,
     data: [
       {
         type: "doughnut",
@@ -50,6 +50,7 @@ export default function LandingPage() {
     animationEnabled: true,
     backgroundColor: "#2a2d3e",
     height: 150,
+    width: 270,
     data: [
       {
         type: "doughnut",
@@ -62,6 +63,7 @@ export default function LandingPage() {
     animationEnabled: true,
     backgroundColor: "#2a2d3e",
     height: 150,
+    width: 270,
     data: [
       {
         type: "doughnut",
@@ -102,7 +104,7 @@ export default function LandingPage() {
     { x: new Date(2017, 0, 28), y: 28 },
     { x: new Date(2017, 0, 29), y: 34 },
     { x: new Date(2017, 0, 30), y: 30 },
-  ]
+  ];
 
   const dataPointsAluminium = [
     { x: new Date(2017, 0, 0), y: 25060 },
@@ -136,7 +138,7 @@ export default function LandingPage() {
     { x: new Date(2017, 0, 28), y: 40000 },
     { x: new Date(2017, 0, 29), y: 52500 },
     { x: new Date(2017, 0, 30), y: 32300 },
-  ]
+  ];
   const dataPointsWood = [
     { x: new Date(2017, 0, 0), y: 25060 },
     { x: new Date(2017, 0, 1), y: 27980 },
@@ -169,7 +171,7 @@ export default function LandingPage() {
     { x: new Date(2017, 0, 28), y: 40000 },
     { x: new Date(2017, 0, 29), y: 52500 },
     { x: new Date(2017, 0, 30), y: 32300 },
-  ]
+  ];
   const dataPointsPaper = [
     { x: new Date(2017, 0, 0), y: 25060 },
     { x: new Date(2017, 0, 1), y: 27980 },
@@ -202,15 +204,15 @@ export default function LandingPage() {
     { x: new Date(2017, 0, 28), y: 40000 },
     { x: new Date(2017, 0, 29), y: 52500 },
     { x: new Date(2017, 0, 30), y: 32300 },
-  ]
+  ];
 
-  const [dataP, setDataP] = useState(dataPointsPlastic);
+  const [dataP, setDataP] = useState(dataPointsAluminium);
 
   const options = {
     animationEnabled: true,
     backgroundColor: "#2a2d3e",
     height: 350,
-    width: 1300,
+    width: 1220,
     animationDuration: 3000,
     title: {
       text: "Daily Price",
@@ -242,28 +244,28 @@ export default function LandingPage() {
       <div className={styles.LandingPageSecondHalf}>
         <div data-aos="fade-down" className={styles.LandingPagePriceDiv}>
           <PriceCard
-            onClick={event => setDataP(dataPointsPlastic)}
+            onClick={(event) => setDataP(dataPointsPlastic)}
             type="Plastic Bottles"
             price="₹30/kg"
             change="5"
             option={optionPlastic}
           ></PriceCard>
           <PriceCard
-          onClick={event => setDataP(dataPointsAluminium)}
-            type="Aluminium Sheets"
+            onClick={(event) => setDataP(dataPointsAluminium)}
+            type="Aluminium"
             price="₹50/kg"
             change="10"
             option={optionAlu}
           ></PriceCard>
           <PriceCard
-          onClick={event => setDataP(dataPointsWood)}
+            onClick={(event) => setDataP(dataPointsWood)}
             type="Wood Logs"
             price="₹60/kg"
             change="3"
             option={optionWood}
           ></PriceCard>
           <PriceCard
-          onClick={event => setDataP(dataPointsPaper)}
+            onClick={(event) => setDataP(dataPointsPaper)}
             type="Paper Scrap"
             price="₹14/kg"
             change="-2"

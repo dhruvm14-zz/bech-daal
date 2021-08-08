@@ -54,7 +54,17 @@
     margin-top: 3vh;
     /* margin-left: 35vw; */
     border: none;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 5px #737685;
+    cursor: pointer;
 }
+
+.border > button:active {
+    background-color: #ad1466;
+    box-shadow: 0 3px 5px #737685;
+    transform: translateY(4px);
+  }
 
 .border > p {
     margin: auto;

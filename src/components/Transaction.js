@@ -3,14 +3,19 @@ import styles from "./../styles/Transaction.module.css";
 import Slider from 'react-slick'
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import AOS from 'aos';
 
 export default function Transaction(props) {
+
+    AOS.init({
+        duration: 1000,
+    });
 
     // const [accept, setAccept] = useState()
     const history = useHistory();
 
     const {
-        trans, admin
+        trans, key, admin
     } = props
 
     const sliderSettings = {
@@ -46,7 +51,7 @@ export default function Transaction(props) {
     return (
         <>
             <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-            <div className={styles.container}>
+            <div data-aos={key%2 === 0 ? "fade-right" : "fade-left"} className={styles.container}>
                 <Slider className={styles.slider} {...sliderSettings}>
                     {img.map((item, i) => <img className={styles.images} src={item} key={`key${i}`} alt=""/>)}
                 </Slider>
@@ -73,7 +78,7 @@ export default function Transaction(props) {
                 </div>
                 : 
                 <>
-                {trans.isApproved ? <img className={styles.approved} src="/img/approved.png" alt=""/> : null}
+                {trans.isApproved ? <img className={styles.approved} src="/img/approved.png" alt=""/> : <img className={styles.approved} src="/img/pending.png" alt=""/>}
                 </>
                 }
             </div>

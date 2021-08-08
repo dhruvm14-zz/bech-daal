@@ -71,13 +71,31 @@
 }
 
 .accept {
-    background-color: #4690d7;
+    background-color: green;
     color: gold;
     cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 5px #737685;
 }
 
+.accept:active {
+    background-color: rgb(9, 71, 9);
+    box-shadow: 0 3px 5px #737685;
+    transform: translateY(4px);
+  }
+
 .reject {
-    background-color: rgb(114, 13, 13);
+    background-color: rgb(184, 17, 17);
     color: antiquewhite;
     cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 5px #737685;
 }
+
+.reject:active {
+    background-color: rgb(112, 16, 9);
+    box-shadow: 0 3px 5px #737685;
+    transform: translateY(4px);
+  }

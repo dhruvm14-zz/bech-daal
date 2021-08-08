@@ -6,7 +6,7 @@ import axios from "axios";
 
 export default function SellingPage() {
   const [name, setName] = useState("");
-  const [number, setNumber] = useState(0);
+  const [number, setNumber] = useState("");
   const [username, setUsername] = useState("");
   const [address, setAddress] = useState("")
   const [address2, setAddress2] = useState("")
@@ -43,7 +43,7 @@ export default function SellingPage() {
   const submit = () => {
     const user = JSON.parse(localStorage.getItem("user"))
     const data = {
-      _id : user.user._id,
+      _id : user._id,
       number,
       address: (`${address} ${address2}`),
       type,
@@ -57,6 +57,18 @@ export default function SellingPage() {
     }).catch(err => {
         console.log(err)
     })
+
+    setAddress("");
+    setAddress2("");
+    setEmail("");
+    setImageLinks([]);
+    setName("");
+    setNumber("");
+    setQuantity(0);
+    setRate(0);
+    setType("plastic")
+    setUsername("")
+
   }
 
   return (
