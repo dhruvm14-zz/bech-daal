@@ -1,0 +1,116 @@
+h1, p {
+    color: antiquewhite;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #212332;
+    width: 100%;
+}
+
+.OuterContainer{
+    display: flex;
+}
+
+.infoBox {
+    display: flex;
+    flex-direction: row;
+    width: 85vw;
+    margin: 5vh auto;
+}
+
+.profile {
+    margin: 5vh auto;
+    /* border: 2px solid black; */
+    height: 40vh;
+    width: 37vw;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: #2a2d3e;
+    box-shadow: 5px 5px 10px #4690d7;
+}
+
+.profile > h1 {
+    /* background-color: #43a5fe; */
+    color : #fff;
+    width:40vw;
+    text-align: center;
+    padding: 1vh 0;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.profile > div {
+    display: flex;
+    flex-direction: row;
+    height: 30vh;
+    width: 35vw;
+    margin: auto;
+}
+
+.profile > div > img {
+    height: 90%;
+    width: auto;
+    margin: auto 0;
+}
+
+.profile > div > div {
+    display: flex;
+    flex-direction: column;
+    margin: auto 2vw;
+}
+
+.profile > div > div > p {
+    font-size: 1rem;
+    margin: 1vh 0;
+    font-weight: 700;
+}
+
+.score {
+    margin: 5vh auto;
+    /* border: 2px solid black; */
+    height: 40vh;
+    width: 37vw;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    background-color: #2a2d3e;
+    box-shadow: 5px 5px 10px #4690d7;
+}
+
+.score > div {
+    display: flex;
+    flex-direction: row;
+    height: 30vh;
+    width: 35vw;
+    margin: auto;
+}
+
+.score > h1 {
+    /* background-color: #43a5fe; */
+    color : #fff;
+    width:40vw;
+    text-align: center;
+    padding: 1vh 0;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.scoreText {
+    display: flex;
+    flex-direction: column;
+    margin: auto 2vw;
+}
+
+.scoreText > p {
+    font-size: 1rem;
+    margin: 1vh 0;
+    font-weight: 700;
+}
+
+.scoreGraph {
+    height: 20vh;
+    width: 20vh;
+    margin: auto 0 auto auto;
+}
+

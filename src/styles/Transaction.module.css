@@ -1,0 +1,83 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 80vw;
+    height: 30vh;
+    margin: 5vh auto;
+    background: #737685;
+    border-radius: 1rem ;
+    /* border: 2px solid gold; */
+}
+
+.slider {
+    height: 25vh;
+    width: 28vh; 
+    margin: auto 2vw;
+}
+
+.images {
+    height: 90%;
+    width: auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: row;
+    width: 60vw;
+    margin: auto;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+.col > h1 {
+    font-size: 1rem;
+    margin: 1vh 0;
+}
+
+.col > p {
+    font-size: 1rem;
+    margin: 1vh 10vw;
+}
+
+.approved {
+    width: 15vw;
+    height: 14vh;
+    margin: 0 auto;
+}
+
+
+.admin {
+    display: flex;
+    flex-direction: column;
+    /* margin: auto; */
+}
+
+.admin > button {
+    margin: auto 2vw auto 0;
+}
+
+.admin > button {
+    /* background-color: #4690d7; */
+    font-size: 1rem;
+    width: 7vw;
+    height: 5vh;
+    outline: none;
+    border-radius: 1rem;
+    border: none;
+}
+
+.accept {
+    background-color: #4690d7;
+    color: gold;
+    cursor: pointer;
+}
+
+.reject {
+    background-color: rgb(114, 13, 13);
+    color: antiquewhite;
+    cursor: pointer;
+}

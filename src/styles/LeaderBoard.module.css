@@ -1,0 +1,8 @@
+.LeaderBoardOuterDiv{
+    display: flex;
+    background-color: #212332;
+}
+
+.LeaderBoardSecondHalf{
+    margin: auto;
+}

@@ -1,0 +1,19 @@
+.TableDataTable{
+    width: 100%;
+    height: auto;
+    /* justify-content: space-around; */
+    margin-left: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.TableDataValue{
+    width: 20vw;
+    color: #4690d7;
+}
+
+.fade {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), #737685, rgba(0, 0, 0, 0));
+  }

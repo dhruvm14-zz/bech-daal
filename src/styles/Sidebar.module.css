@@ -1,0 +1,41 @@
+.SidebarOuterDiv{
+    background-color: #2a2d3e;
+    width: 12vw;
+    /* height: auto; */
+    flex: 1 0 1;
+    min-height: 100vh;
+}
+
+.SidebarInnerDiv{
+    padding-top: 30px;
+    margin: -30px 0;
+}
+
+.SidebarListItem{
+    margin-top: 0;
+    color: #737685;
+    margin-bottom: 5px;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.SidebarListItem:hover{
+    color: #4d88c1;
+    cursor: pointer;
+}
+
+.SidebarSelected{
+    color: #4d88c1;
+}
+
+.logoDesign{
+    width: 50px;
+    height: 50px;
+    margin: 20px 20px 0px 10px;
+}
+
+.nameDesign{
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+}
