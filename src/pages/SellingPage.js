@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import styles from "../styles/SellingPage.module.css";
 import axios from "axios";
@@ -8,15 +8,15 @@ export default function SellingPage() {
   const [name, setName] = useState("");
   const [number, setNumber] = useState("");
   const [username, setUsername] = useState("");
-  const [address, setAddress] = useState("")
-  const [address2, setAddress2] = useState("")
-  const [email, setEmail] = useState("")
-  const [type, setType] = useState("plastic")
-  const [quantity, setQuantity] = useState("")
-  const [rate, setRate] = useState("")
+  const [address, setAddress] = useState("");
+  const [address2, setAddress2] = useState("");
+  const [email, setEmail] = useState("");
+  const [type, setType] = useState("plastic");
+  const [quantity, setQuantity] = useState("");
+  const [rate, setRate] = useState("");
   const [imageLinks, setImageLinks] = useState([]);
 
-  const history = useHistory()
+  const history = useHistory();
 
   const uploadImage = async (file) => {
     try {
@@ -41,22 +41,25 @@ export default function SellingPage() {
   };
 
   const submit = () => {
-    const user = JSON.parse(localStorage.getItem("user"))
+    const user = JSON.parse(localStorage.getItem("user"));
     const data = {
-      _id : user._id,
+      _id: user._id,
       number,
-      address: (`${address} ${address2}`),
+      address: `${address} ${address2}`,
       type,
       rate,
       images: imageLinks,
-      quantity
-    }
+      quantity,
+    };
 
-    axios.post("http://localhost:5000/transactions/addTransaction", data).then(res => {
-        history.push("/profile")
-    }).catch(err => {
-        console.log(err)
-    })
+    axios
+      .post("http://localhost:5000/transactions/addTransaction", data)
+      .then((res) => {
+        history.push("/profile");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
 
     setAddress("");
     setAddress2("");
@@ -66,10 +69,9 @@ export default function SellingPage() {
     setNumber("");
     setQuantity(0);
     setRate(0);
-    setType("plastic")
-    setUsername("")
-
-  }
+    setType("plastic");
+    setUsername("");
+  };
 
   return (
     <div className={styles.SellingPageOuterDiv}>
@@ -84,14 +86,14 @@ export default function SellingPage() {
                 type="text"
                 placeholder="Name"
                 value={name}
-                onChange={e => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               ></input>
               <input
                 className={styles.SellingPageInput}
                 type="text"
                 placeholder="UserName"
                 value={username}
-                onChange={e => setUsername(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
               ></input>
             </div>
             <div className={styles.SellingPageBlock}>
@@ -101,14 +103,14 @@ export default function SellingPage() {
                 type="email"
                 value={email}
                 placeholder="Email"
-                onChange={e => setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               ></input>
               <input
                 className={styles.SellingPageInput}
                 type="text"
                 placeholder="Contact Number"
                 value={number}
-                onChange={e => setNumber(e.target.value)}
+                onChange={(e) => setNumber(e.target.value)}
               ></input>
             </div>
             <div className={styles.SellingPageBlock}>
@@ -117,7 +119,7 @@ export default function SellingPage() {
                 className={styles.SellingPageInput}
                 type="text"
                 value={address}
-                onChange={e => setAddress(e.target.value)}
+                onChange={(e) => setAddress(e.target.value)}
                 placeholder="Address Line 1"
               ></input>
             </div>
@@ -127,7 +129,7 @@ export default function SellingPage() {
                 className={styles.SellingPageInput}
                 type="text"
                 value={address2}
-                onChange={e => setAddress2(e.target.value)}
+                onChange={(e) => setAddress2(e.target.value)}
                 placeholder="Address Line 2"
               ></input>
             </div>
@@ -138,7 +140,7 @@ export default function SellingPage() {
               <select
                 style={{ fontSize: "15px", width: "21vw" }}
                 className={styles.SellingPageInput}
-                onChange={e => setType(e.target.value)}
+                onChange={(e) => setType(e.target.value)}
                 value={type}
                 placeholder="type"
               >
@@ -153,7 +155,7 @@ export default function SellingPage() {
                 className={styles.SellingPageInput}
                 type="number"
                 value={quantity}
-                onChange={e => setQuantity(e.target.value)}
+                onChange={(e) => setQuantity(e.target.value)}
                 placeholder="Quantity"
               ></input>
             </div>
@@ -162,7 +164,7 @@ export default function SellingPage() {
                 className={styles.SellingPageInput}
                 type="number"
                 value={rate}
-                onChange={e => setRate(e.target.value)}
+                onChange={(e) => setRate(e.target.value)}
                 placeholder="Cost per kg"
               ></input>
             </div>
@@ -270,7 +272,10 @@ export default function SellingPage() {
             </div>
           )}
         </div>
-        <button className={styles.SellingPageSubmitButton} onClick={() => submit()}>
+        <button
+          className={styles.SellingPageSubmitButton}
+          onClick={() => submit()}
+        >
           Submit
         </button>
       </div>
