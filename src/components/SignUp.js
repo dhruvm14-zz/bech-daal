@@ -29,7 +29,7 @@ export default function SignUp(props) {
             password
         }
         console.log(data)
-        axios.post("http://localhost:5000/users/addUser", data).then(res => {
+        axios.post("https://still-dawn-30288.herokuapp.com/users/addUser", data).then(res => {
             localStorage.setItem("user", JSON.stringify(res.data))
             history.push("/")
         }).catch(err => {

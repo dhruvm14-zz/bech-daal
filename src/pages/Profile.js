@@ -11,7 +11,7 @@ export default function Profile() {
   console.log(user.user);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/transactions/status/${user._id}`)
+      .get(`https://still-dawn-30288.herokuapp.com/transactions/status/${user._id}`)
       .then((res) => {
         console.log(res.data);
         setPrevTrans(res.data);

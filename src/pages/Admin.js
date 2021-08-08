@@ -8,7 +8,7 @@ export default function Admin() {
     const [prevTrans, setPrevTrans] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:5000/transactions/admin`).then(res => {
+        axios.get(`https://still-dawn-30288.herokuapp.com/transactions/admin`).then(res => {
                 setPrevTrans(res.data);
             }).catch(err => {
                 console.log(err)

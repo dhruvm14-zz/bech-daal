@@ -29,7 +29,7 @@ export default function Transaction(props) {
     }
 
     const accept = () => {
-        axios.post(`http://localhost:5000/transactions/approveTransaction/${trans._id}`).then(res => {
+        axios.post(`https://still-dawn-30288.herokuapp.com/transactions/approveTransaction/${trans._id}`).then(res => {
 
         }).catch(err => {
             console.log(err)
@@ -38,7 +38,7 @@ export default function Transaction(props) {
     }
 
     const reject = () => {
-        axios.post(`http://localhost:5000/transactions/delTransaction/${trans._id}`).then(res => {
+        axios.post(`https://still-dawn-30288.herokuapp.com/transactions/delTransaction/${trans._id}`).then(res => {
 
         }).catch(err => {
             console.log(err)

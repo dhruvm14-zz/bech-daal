@@ -53,7 +53,7 @@ export default function SellingPage() {
     };
 
     axios
-      .post("http://localhost:5000/transactions/addTransaction", data)
+      .post("https://still-dawn-30288.herokuapp.com/transactions/addTransaction", data)
       .then((res) => {
         history.push("/profile");
       })
